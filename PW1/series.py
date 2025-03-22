@@ -17,8 +17,10 @@ min_val, max_val = min(raw), max(raw)
 train_x_normalized = [normalize_data(x, min_val, max_val) for x in train_x]
 expected_normalized = normalize_data(expected, min_val, max_val)
 
-neuron = SimpleNeuralNetwork(3, 3, learning_rate=0.1)
+neuron = SimpleNeuralNetwork(3, 3, learning_rate=0.1, max_iterations=100000)
 neuron.train(train_x_normalized, expected_normalized)
+
+# print(neuron.feedforward(raw))
 
 print("Testing:")
 predictions = [neuron.feedforward(x) for x in train_x_normalized]
@@ -31,5 +33,3 @@ for i, inputs in enumerate(train_x):
     error = abs((actual - predicted) / actual) * 100
 
     print(f"Input: {inputs} -> Predicted: {predicted:.2f} (Expected: {actual}) | Error: {error:.2f}%")
-
-neuron.feedforward(raw)

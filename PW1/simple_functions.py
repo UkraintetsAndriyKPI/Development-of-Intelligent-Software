@@ -19,6 +19,6 @@ for name, data in train_data.items():
     print(f"Testing '{name}':")
     for inputs, expected in data:
         output = neuron.forward(inputs)
-        print(f"Input: {inputs} - Output: {round(output)} [Expected {expected}]")
+        print(f"Input: {inputs} - Output: {round(output, 4)} [Expected {expected}]")
 
     # print(neuron.weights)
