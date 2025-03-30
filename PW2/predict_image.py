@@ -5,9 +5,9 @@ from network import NeuralNetwork
 
 def load_image(image_path):
     """ Завантажуємо зображення правильно у бінарному режимі """
-    with open(image_path, "rb") as f:  # Відкриваємо як бінарний файл
+    with open(image_path, "rb") as f:
         image = Image.open(f).convert('L')  # Конвертуємо в градації сірого
-        image = image.resize((6, 6))  # Масштабуємо до 6x6
+        image = image.resize((6, 6))
         return np.array(image).flatten()
 
 if __name__ == "__main__":

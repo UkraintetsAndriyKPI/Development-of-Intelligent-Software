@@ -36,9 +36,8 @@ def load_images_and_labels(image_folder="train_images"):
 
 def train_network():
     train_X, train_Y = load_images_and_labels()
-    train_X, train_Y = np.array(train_X), np.array(train_Y),
+    train_X, train_Y = np.array(train_X), np.array(train_Y)
 
-    # Перетворюємо мітки в one-hot кодування (2 нейрони у вихідному шарі)
     y_one_hot = np.array([label for label in train_Y])
     # print(y_one_hot)
 
@@ -49,7 +48,7 @@ def train_network():
     network = NeuralNetwork(input_size, hidden_sizes, output_size)
 
 
-    network.train(train_X, y_one_hot, epochs=30000)
+    network.train(train_X, y_one_hot, epochs=100000)
 
     # Зберігаємо модель
     network.save_model("nn_model.json")
