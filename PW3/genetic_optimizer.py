@@ -5,7 +5,7 @@ import numpy as np
 
 class GeneticOptimizer:
 
-    def __init__(self, func, x_min, x_max, pop_size=5000, mutation_rate=0.2, generations=500, mutation_amount=0.1):
+    def __init__(self, func, x_min, x_max, pop_size=9000, mutation_rate=0.2, generations=100, mutation_amount=0.1):
         self.func = func
         self.x_min = x_min
         self.x_max = x_max
